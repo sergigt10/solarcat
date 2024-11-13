@@ -1,0 +1,35 @@
+@if ( $categoriaActual === 'extintors' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/extintors.jpg') }});"></div>
+@elseif ( $categoriaActual === 'boques-dincendi-bies' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/bies.jpg') }});"></div>
+@elseif ( $categoriaActual === 'hidrants' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/hidrants.jpg') }});"></div>
+@elseif ( $categoriaActual === 'portes-tallafoc' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/portes-tallafoc.jpg') }});"></div>
+@elseif ( $categoriaActual === 'sistemes-dextincio-automatica-per-a-campanes-de-cuina' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/sistemes-extincio.jpg') }});"></div>
+@elseif ( $categoriaActual === 'mantes-ignifugues' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/mantes-ignífugues.jpg') }});"></div>
+@elseif ( $categoriaActual === 'columnes-seques' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/columnes-seques.jpg') }});"></div>
+@elseif ( $categoriaActual === 'lloguer-i-venda-dequips-autonoms' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/lloguer-i-venda-equips.jpg') }});"></div>
+@elseif ( $categoriaActual === 'mangueres-llances-i-racors' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/mangueres-llances-i-racors.jpg') }});"></div>
+@elseif ( $categoriaActual === 'ruixadors' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/ruixadors.jpg') }});"></div>
+@elseif ( $categoriaActual === 'deteccio-dincendi' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/deteccio-incendi.jpg') }});"></div>
+@elseif ( $categoriaActual === 'senyalitzacio' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/senyalitzacio.jpg') }});"></div>
+@elseif ( $categoriaActual === 'intrusio' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/intrusio.jpg') }});"></div>
+@elseif ( $categoriaActual === 'cctv-videovigilancia' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/videovigilancia.jpg') }});"></div>
+@elseif ( $categoriaActual === 'telefonia-i-megafonia' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/telefonia-megafonia.jpg') }});"></div>
+@elseif ( $categoriaActual === 'control-daccessos' )
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/control-accessos.jpg') }});"></div>
+@else
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/superior/productes-seguretat-i-foc.jpg') }});"></div>
+@endif
