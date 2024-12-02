@@ -11,39 +11,27 @@ Route::group(
     ], function(){
         /* Home */
         Route::get('/', 'FrontendController@home')->name('frontend.home.index');
-        /* Home */
-        // Route::get('/', 'FrontendController@portada')->name('frontend.portada.index');
-        /* Equip */
-        Route::get('/equip-docent', 'FrontendController@equip')->name('frontend.equip.index');
-        /* Historia */
-        Route::get('/historia-escola-30-pasos', 'FrontendController@historia')->name('frontend.histories.index');
-        /* Escola familia */
-        Route::get('/escola-familia', 'FrontendController@escolaFamilia')->name('frontend.escolaFamilies.index');
-        /* Projecte educatiu */
-        Route::get('/projecte-educatiu-del-centre', 'FrontendController@projecteEducatiu')->name('frontend.projecteEducatiu.index');
-        /* Instal·lacions */
-        Route::get('/instalacions-escola-30-pasos', 'FrontendController@instalacions')->name('frontend.instalacions.index');
-        /* Menú migdia */
-        Route::get('/menu-migdia', 'FrontendController@menus')->name('frontend.menus.index');
-        /* Notícies */
-        Route::get('/noticies-escola-30-pasos/{year?}', 'FrontendController@noticies')->name('frontend.noticies.index');
-        Route::get('/noticies-escola-30-pasos/detall/{noticia}', 'FrontendController@showNoticia')->name('frontend.noticies.show');
+
+        /* Empresa */
+        Route::get('/empresa', 'FrontendController@empresa')->name('frontend.empresa.index');
+
+        /* Empresa */
+        Route::get('/productos', 'FrontendController@productos')->name('frontend.productos.index');
+
+        /* Fotovoltaica para viviendas */
+        Route::get('/fotovoltaica-para-viviendas', 'FrontendController@fotovoltaicaViviendas')->name('frontend.fotovoltaicaViviendas.index');
+
+        /* Fotovoltaica para empresas */
+        Route::get('/fotovoltaica-para-empresas', 'FrontendController@fotovoltaicaEmpresas')->name('frontend.fotovoltaicaEmpresas.index');
+
         /* Projectes */
-        Route::get('/projectes-actius-escola-30-pasos', 'FrontendController@projectes')->name('frontend.projectes.index');
-        Route::get('/projectes-actius-escola-30-pasos/detall/{projecte}', 'FrontendController@showProjecte')->name('frontend.projectes.show');
-        /* Calendari */
-        Route::get('/calendari-escola-30-pasos', 'FrontendController@calendari')->name('frontend.calendari.index');
-        /* Consell escolar */
-        Route::get('/consell-escolar', 'FrontendController@consellEscolar')->name('frontend.consellEscolar.index');
-        /* Serveis educatius */
-        Route::get('/serveis-educatius/{servei}', 'FrontendController@serveisEducatius')->name('frontend.serveisEducatius.index');
-        /* Documents centre */
-        Route::get('/documents-centre', 'FrontendController@documentsCentre')->name('frontend.documentsCentre.index');
+        Route::get('/proyectos-solarcat', 'FrontendController@projectes')->name('frontend.projectes.index');
+        Route::get('/projectes-solarcat/{projecte}', 'FrontendController@showProjecte')->name('frontend.projectes.show');
+
         /* Contacte */
         Route::get('/contacte', 'FrontendController@contacte')->name('frontend.contacte.index');
         Route::post('/contacte/enviat', 'FrontendController@sendEmail')->name('frontend.sendMail');
-        /* Avís legal */
-        Route::get('/politica-cookies', 'FrontendController@cookies')->name('frontend.legal.politica-cookies.index');
+        
 });
 
         /* Sitemap */

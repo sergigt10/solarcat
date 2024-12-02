@@ -14,6 +14,7 @@ class Projecte extends Model
         'titol_esp',
         'descripcio_cat',
         'descripcio_esp',
+        'kw',
         'ordre',
         'actiu',
         'imatge1',

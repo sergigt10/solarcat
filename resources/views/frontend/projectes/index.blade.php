@@ -1,52 +1,60 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <!-- Breadcrumbs Start -->
-    <div class="rs-breadcrumbs img6">
-        <div class="breadcrumbs-inner text-center">
-            <h1 class="page-title">Projectes actius</h1>
-        </div>
-    </div>
-    <!-- Breadcrumbs End -->
 
-    <div class="rs-inner-blog pt-70 pb-120 md-pt-50 md-pb-90">
+    <section class="banner-style-one">
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/pattren-3.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="banner-details">
+                        <h2>Proyectos</h2>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="gap blog-style-one our-blog-one">
         <div class="container">
             <div class="row">
-                @foreach ( $projectes as $projecte )
-                    <div class="col-lg-4 mb-35">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <a href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}" >
-                                    <img src="{{ asset("/storage/$projecte->imatge1") }}" alt="{!! $projecte->titol !!}, Escola 30 pasos">
+                @foreach ( $projectes as $projecte)
+                    <div class="col-lg-4">
+                        <div class="blog-post">
+                            <div class="blog-image">
+                                <figure>
+                                    <img src="{{ asset("/storage/$projecte->imatge1") }}" alt="{{ $projecte->titol_esp }}" onclick="location.href='{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}'" style="cursor: pointer;">
+                                </figure>
+                                <a href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}">
+                                    <i class="fa-solid fa-angles-right"></i>
                                 </a>
                             </div>
-                            <div class="blog-content">
-                                <h5 class="blog-title">
-                                    <a href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}" >
-                                        {!! $projecte->titol !!}
-                                    </a>
-                                </h5>
-                                <br><br>
-                                {{-- <div class="blog-desc">
-                                    <a href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}" >
-                                        {{ Str::of( html_entity_decode(strip_tags($projecte->descripcio)) )->limit(150, '...') }}
-                                    </a>   
-                                </div> --}}
-                                <div class="blog-button inner-blog">
-                                    <a class="blog-btn" href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}" >
-                                        Més informació
-                                    </a>
-                                </div>
+                            <div class="blog-data" style="height: 220px">
+                                <a href="{{ route('frontend.projectes.show', ['projecte' => $projecte->slug]) }}">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="blog-date">{{ $projecte->kw }} Kw</span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h2>
+                                                {{ $projecte->titol_esp }}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    @if( $projecte->descripcio_esp )
+                                        <br>
+                                        <span>
+                                            {!! $projecte->descripcio_esp !!}
+                                        </span>
+                                    @endif
+                                </a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-            </div>
-            <div class="text-center">
-                {{ $projectes->links() }}
+                <div class="text-center">
+                    {{ $projectes->links() }}
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
-

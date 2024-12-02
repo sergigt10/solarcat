@@ -1,82 +1,105 @@
 @extends('frontend.layouts.app')
 
-@section('styles')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-@endsection
-
 @section('content')
-    <!-- Breadcrumbs Start -->
-    <div class="rs-breadcrumbs img6">
-        <div class="breadcrumbs-inner text-center">
-            <h1 class="page-title">{{ $projecte->titol }}</h1>
-        </div>
-    </div>
-    <!-- Breadcrumbs End -->
 
-    <div class="rs-inner-blog pt-120 pb-120 md-pt-90 md-pb-90">
+    <section class="banner-style-one">
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/pattren-3.png') }});"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="banner-details">
+                        <h2>{{ $projecte->titol_esp }}</h2>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="gap blog-style-one blog-detail detail-page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="blog-details">
-                        <div class="blog-full">
-                            {!! $projecte->descripcio !!}
-                        </div>
-                        <br>
-                        <div class="bs-img mb-35">
-                            <div class="container">
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="{{ asset("/storage/$projecte->imatge1") }}" alt="{{ $projecte->titol }}" style="width:100%;">
-                                        </div>
-                                        @if ($projecte->imatge2)
-                                            <div class="item">
-                                                <img src="{{ asset("/storage/$projecte->imatge2") }}" alt="{{ $projecte->titol }}" style="width:100%;">
-                                            </div>
-                                        @endif
-                                        @if ($projecte->imatge3)
-                                            <div class="item">
-                                                <img src="{{ asset("/storage/$projecte->imatge3") }}" alt="{{ $projecte->titol }}" style="width:100%;">
-                                            </div>
-                                        @endif
-                                        @if ($projecte->imatge4)
-                                            <div class="item">
-                                                <img src="{{ asset("/storage/$projecte->imatge4") }}" alt="{{ $projecte->titol }}" style="width:100%;">
-                                            </div>
-                                        @endif
-                                        @if ($projecte->imatge5)
-                                            <div class="item">
-                                                <img src="{{ asset("/storage/$projecte->imatge5") }}" alt="{{ $projecte->titol }}" style="width:100%;">
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <!-- Left and right controls -->
-                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+                    <div class="blog-post">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="blog-image">
+                                    <figure>
+                                        <img src="{{ asset("/storage/$projecte->imatge1") }}" alt="{{ $projecte->titol_esp }}">
+                                    </figure>
+                                </div>
+                                <div class="blog-data">
+                                    <span class="blog-date">{{ $projecte->kw }} Kw</span>
+                                    <h2>
+                                        {{ $projecte->titol_esp }}
+                                    </h2>
+                                    <br>
+                                    {!! $projecte->descripcio_esp !!}
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <a class="readon learn-more" href="{{ route('frontend.projectes.index') }}">Més projectes</a>
+                        <div class="row" style="margin-top: 50px; margin-bottom: 20px">
+                            @if( $projecte->imatge2 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge2") }}" alt="{{ $projecte->titol_esp }}">
                                 </div>
+                            @endif
+
+                            @if( $projecte->imatge3 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge3") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge4 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge4") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge5 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge5") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge7 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge7") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge8 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                    <img src="{{ asset("/storage/$projecte->imatge8") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge9 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                        <img src="{{ asset("/storage/$projecte->imatge9") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+
+                            @if( $projecte->imatge10 )
+                                <div class="col-lg-6" style="margin-bottom: 20px">
+                                        <img src="{{ asset("/storage/$projecte->imatge10") }}" alt="{{ $projecte->titol_esp }}">
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <br>
+                                <a href="{{ route('frontend.projectes.index') }}" class="theme-btn">
+                                    Ver más proyectos
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-    </div>
+    </section>
 
 @endsection
-

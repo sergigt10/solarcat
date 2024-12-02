@@ -42,7 +42,7 @@ return [
             'type'        => 'website',
             'site_name'   => 'Escola els 30 pasos',
             'locale'      => 'ca_CA',
-            'images'      => ['https://www.solarcat.cat/frontend/assets/images/about-2.png'],
+            'images'      => ['https://www.solarcat.es/frontend/assets/images/about-2.png'],
         ],
     ],
     'twitter' => [
@@ -63,9 +63,9 @@ return [
         'defaults' => [
             'title'       => 'Escola els 30 pasos', // set false to total remove
             'description' => "Un projecte escolar que pretén consolidar un model educatiu pensat per afavorir l'acompanyament respectuós de cada infant, per potenciar els aprenentatges.", // set false to total remove
-            'url'         => 'https://www.solarcat.cat', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
+            'url'         => 'https://www.solarcat.es', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'type'        => 'WebPage',
-            'images'      => ['https://www.solarcat.cat/frontend/assets/images/about-2.png'],
+            'images'      => ['https://www.solarcat.es/frontend/assets/images/about-2.png'],
         ],
     ],
 ];

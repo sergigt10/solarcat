@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.solarcat.cat/sitemap.xml
+Sitemap: https://www.solarcat.es/sitemap.xml

@@ -1,20 +1,27 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="rs-breadcrumbs img2">
-        <div class="breadcrumbs-inner text-center">
-            <h1 class="page-title">Error 404</h1>
-        </div>
-    </div>
 
-    <div class="rs-about pt-120 pb-120 md-pt-80 md-pb-80">
+    <section class="banner-style-one">
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/pattren-3.png') }});"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    Pàgina no disponible. <a href="https://www.solarcat.cat/">Tornar a la pàgina d'inici.</a>
+                <div class="banner-details">
+                    <h2>Error 404</h2>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="gap contact-form-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Página no disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 @endsection

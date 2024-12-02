@@ -27,6 +27,7 @@
                                 <table id="order-listing" class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
+                                            <th>Ordre</th>
                                             <th>Títol</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
@@ -35,6 +36,11 @@
                                     <tbody>
                                         @foreach($projectes as $projecte)
                                             <tr>
+                                                <td>
+                                                    <a href="{{ route('backend.projectes.edit', ['projecte' => $projecte->id]) }}" style="color: black;">
+                                                        {{ $projecte->ordre }}
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <a href="{{ route('backend.projectes.edit', ['projecte' => $projecte->id]) }}" style="color: black;">
                                                         {{ $projecte->titol_cat }}

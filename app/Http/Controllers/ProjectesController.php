@@ -46,8 +46,9 @@ class ProjectesController extends Controller
             'titol_esp' => 'required',
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
-            'ordre' => 'required',
+            'ordre' => 'nullable',
             'actiu' => 'required',
+            'kw' => 'required',
             'imatge1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'imatge2' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'imatge3' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
@@ -62,73 +63,74 @@ class ProjectesController extends Controller
 
         $ruta_imatge1 = $request['imatge1']->store('backend/projectes', 'public');
 
-        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
         $imatge1->save();
 
         if($request['imatge2']) {
             $ruta_imatge2 = $request['imatge2']->store('backend/projectes', 'public');
 
-            $imatge2 = Image::make( storage_path("app/public/{$ruta_imatge2}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge2 = Image::make( storage_path("app/public/{$ruta_imatge2}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge2->save();
         }
 
         if($request['imatge3']) {
             $ruta_imatge3 = $request['imatge3']->store('backend/projectes', 'public');
 
-            $imatge3 = Image::make( storage_path("app/public/{$ruta_imatge3}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge3 = Image::make( storage_path("app/public/{$ruta_imatge3}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge3->save();
         }
 
         if($request['imatge4']) {
             $ruta_imatge4 = $request['imatge4']->store('backend/projectes', 'public');
 
-            $imatge4 = Image::make( storage_path("app/public/{$ruta_imatge4}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge4 = Image::make( storage_path("app/public/{$ruta_imatge4}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge4->save();
         }
 
         if($request['imatge5']) {
             $ruta_imatge5 = $request['imatge5']->store('backend/projectes', 'public');
 
-            $imatge5 = Image::make( storage_path("app/public/{$ruta_imatge5}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge5 = Image::make( storage_path("app/public/{$ruta_imatge5}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge5->save();
         }
 
         if($request['imatge6']) {
             $ruta_imatge6 = $request['imatge5']->store('backend/projectes', 'public');
 
-            $imatge6 = Image::make( storage_path("app/public/{$ruta_imatge6}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge6 = Image::make( storage_path("app/public/{$ruta_imatge6}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge6->save();
         }
 
         if($request['imatge7']) {
             $ruta_imatge5 = $request['imatge7']->store('backend/projectes', 'public');
 
-            $imatge7 = Image::make( storage_path("app/public/{$ruta_imatge7}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge7 = Image::make( storage_path("app/public/{$ruta_imatge7}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge7->save();
         }
 
         if($request['imatge8']) {
             $ruta_imatge5 = $request['imatge8']->store('backend/projectes', 'public');
 
-            $imatge8 = Image::make( storage_path("app/public/{$ruta_imatge8}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge8 = Image::make( storage_path("app/public/{$ruta_imatge8}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge8->save();
         }
 
         if($request['imatge9']) {
             $ruta_imatge9 = $request['imatge9']->store('backend/projectes', 'public');
 
-            $imatge9 = Image::make( storage_path("app/public/{$ruta_imatge9}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge9 = Image::make( storage_path("app/public/{$ruta_imatge9}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge9->save();
         }
 
         if($request['imatge10']) {
             $ruta_imatge10 = $request['imatge10']->store('backend/projectes', 'public');
 
-            $imatge10 = Image::make( storage_path("app/public/{$ruta_imatge10}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $imatge10 = Image::make( storage_path("app/public/{$ruta_imatge10}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $imatge10->save();
         }
 
         $projecte = new Projecte($data);
+        $projecte->slug = Str::of($request['titol_esp'])->slug("-");
         $projecte->imatge1 = $ruta_imatge1;
 
         if($request['imatge2']) {
@@ -197,9 +199,15 @@ class ProjectesController extends Controller
             'titol_esp' => 'required',
             'descripcio_cat' => 'required',
             'descripcio_esp' => 'required',
-            'ordre' => 'required',
+            'ordre' => 'nullable',
             'actiu' => 'required',
+            'kw' => 'required'
         ]);
+
+        // Si canviem el nom actualitzem slug
+        if($projecte->titol_esp !== $data['titol_esp']) {
+            $projecte->slug = Str::of($request['titol_esp'])->slug("-");
+        }
 
         $projecte->titol_cat = $data['titol_cat'];
         $projecte->titol_esp = $data['titol_esp'];
@@ -207,6 +215,7 @@ class ProjectesController extends Controller
         $projecte->descripcio_esp = $data['descripcio_esp'];
         $projecte->ordre = $data['ordre'];
         $projecte->actiu = $data['actiu'];
+        $projecte->kw = $data['kw'];
 
         if($request['del_img2'] == "1"){
             File::delete(storage_path("app/public/$projecte->imatge2"));
@@ -249,7 +258,7 @@ class ProjectesController extends Controller
         if($request['imatge1']) {
             $ruta_imatge1 = $request['imatge1']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -263,7 +272,7 @@ class ProjectesController extends Controller
         if($request['imatge2']) {
             $ruta_imatge2 = $request['imatge2']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge2}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge2}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -277,7 +286,7 @@ class ProjectesController extends Controller
         if($request['imatge3']) {
             $ruta_imatge3 = $request['imatge3']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge3}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge3}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -291,7 +300,7 @@ class ProjectesController extends Controller
         if($request['imatge4']) {
             $ruta_imatge4 = $request['imatge4']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge4}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge4}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -305,7 +314,7 @@ class ProjectesController extends Controller
         if($request['imatge5']) {
             $ruta_imatge5 = $request['imatge5']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge5}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge5}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -319,7 +328,7 @@ class ProjectesController extends Controller
         if($request['imatge6']) {
             $ruta_imatge6 = $request['imatge6']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge6}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge6}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -333,7 +342,7 @@ class ProjectesController extends Controller
         if($request['imatge7']) {
             $ruta_imatge7 = $request['imatge7']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge7}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge7}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -347,7 +356,7 @@ class ProjectesController extends Controller
         if($request['imatge8']) {
             $ruta_imatge8 = $request['imatge8']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge8}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge8}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -361,7 +370,7 @@ class ProjectesController extends Controller
         if($request['imatge9']) {
             $ruta_imatge9 = $request['imatge9']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge9}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge9}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -375,7 +384,7 @@ class ProjectesController extends Controller
         if($request['imatge10']) {
             $ruta_imatge10 = $request['imatge10']->store('backend/projectes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge10}") )->resize(1920, 800, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge10}") )->fit(1632, 1224, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior

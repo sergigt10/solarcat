@@ -89,11 +89,15 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
+                                        <label for="exampleInputEmail3">Kw:</label>
+                                        <input name="kw" type="text" class="form-control" id="exampleInputEmail3" placeholder="kw" value="{{ old('kw') }}">
+                                    </div>
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail3">Ordre (1,2,3,4,...):</label>
                                         <input name="ordre" type="number" class="form-control" id="exampleInputEmail3" placeholder="Ordre" value="{{ old('ordre') }}">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail3">Actiu?:</label>
                                         <select id="actiu" name="actiu" class="form-control js-example-basic-single w-100">
                                             <option value="1"

@@ -1,336 +1,279 @@
 <!DOCTYPE html>
-<html lang="{{ Config::get('app.locale') }}">  
+<html lang="{{ Config::get('app.locale') }}">
     <head>
-        <!-- meta tag -->
+        <!-- Meta Options -->
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Title -->
 
         <!-- SEO -->
         {!! SEO::generate() !!}
 
-        <!-- responsive tag -->
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/assets/images/favicon/apple-touch-icon.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/assets/images/favicon/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('frontend/assets/images/favicon/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ asset('frontend/assets/images/favicon/site.webmanifest') }}">
-        <link rel="mask-icon" href="{{ asset('frontend/assets/images/favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#907761">
-        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('frontend/assets/images/heading-icon.png') }}">
+        <!-- Owl Carousal -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/owl.theme.default.min.css') }}">
+        <!-- Animate on scroll -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/aos.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/odometer.min.css') }}">
+        <!-- Fancy Box -->
+        <link rel="stylesheet" href="{{ asset('frontend/assets/css/jquery.fancybox.min.css') }}">
+        <!-- Nice Select -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/nice-select.css') }}">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/style-dark.css') }}">
+        <!-- Colors -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/color.css') }}">
+        <!-- Responsive -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/responsive.css') }}">
+        <!-- Font Awesome 5 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
         <!-- estils personalitzats -->
         @yield('styles')
 
-        <!-- Bootstrap v4.4.1 css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/font-awesome.min.css') }}">
-        <!-- flaticon css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/fonts/flaticon.css') }}">
-        <!-- animate css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/animate.css') }}">
-        <!-- owl.carousel css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/owl.carousel.css') }}">
-        <!-- slick css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/slick.css') }}">
-        <!-- off canvas css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/off-canvas.css') }}">
-        <!-- magnific popup css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/magnific-popup.css') }}">
-        <!-- Main Menu css -->
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/rsmenu-main.css') }}">
-        <!-- spacing css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/rs-spacing.css') }}">
-        <!-- style css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/style.css') }}"> <!-- This stylesheet dynamically changed from style.less -->
-        <!-- responsive css -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('frontend/assets/css/responsive.css') }}">
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBH33J42QY"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-LBH33J42QY');
-        </script>
-
     </head>
-    <body class="defult-home">
-        
-        <!--Preloader area start here-->
-        <div id="loader" class="loader">
-            <div class="loader-container"></div>
+    <body>
+        <!-- Loader Start -->
+        <div class="preloader">
+            <figure>
+                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Solarcat"> 
+            </figure>
         </div>
-        <!--Preloader area End here--> 
-     
-		<!-- Main content Start -->
-        <div class="main-content">
-            
-            <!--Full width header Start-->
-            <div class="full-width-header">
-                <!--Header Start-->
-                <header id="rs-header" class="rs-header style2">
-                    <!-- Topbar Area Start -->
-                    <div class="topbar-area style2">
+        <!-- Loader End -->
+        <!-- Header Style One Start -->
+        <header class="header-style-one" >
+            <div class="container">
+                <div class="row">
+                    <div class="desktop-nav" id="stickyHeader">
                         <div class="container">
-                                <div class="row y-middle">
-                                    <div class="col-lg-8">
-                                        <ul class="topbar-contact">
-                                                <li>
-                                                    <i class="flaticon-email"></i>
-                                                    <a href="mailto:a8074641@xtec.cat">a8074641@xtec.cat</a>
-                                                </li>
-                                                <li>
-                                                    <i class="flaticon-call"></i>
-                                                    <a href="tel:937826644"> 937 826 644</a>
-                                                </li>
-                                                <li>
-                                                    <i class="flaticon-location"></i>
-                                                    C/ Berenguer de Palou, nº 64
-                                                </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 text-right">
-                                        <div class="toolbar-sl-share">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="d-flex-all justify-content-between">
+                                        <div class="header-logo">
+                                            <a href="{{ route('frontend.home.index') }}">
+                                                <figure>
+                                                    <img src="{{ asset('frontend/assets/images/logo.png') }}" width="263px" height="37px" alt="Solarcat">
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="nav-bar">
                                             <ul>
-                                                <li class="opening"> <em><i class="flaticon-clock"></i> 09:00 - 16:30</em> </li>
-                                                <li><a href="https://www.solarcat.cat/escola/login">Accés àrea privada</a></li>
-                                                <li><a href="https://t.me/+DIPiEYdBxuQ3MzNk" target="_blank"><i class="fa fa-telegram"></i></a></li>
+                                                <li>
+                                                    <a href="{{ route('frontend.empresa.index') }}">EMPRESA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('frontend.productos.index') }}">PRODUCTOS</a>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a href="javascript:void(0)">SERVICIOS</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{{ route('frontend.fotovoltaicaViviendas.index') }}">Fotovoltaica para viviendas</a></li>
+                                                        <li><a href="{{ route('frontend.fotovoltaicaEmpresas.index') }}">Fotovoltaica para empresas</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('frontend.projectes.index') }}">PROYECTOS</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ route('frontend.contacte.index') }}">CONTACTO</a>
+                                                </li>
                                             </ul>
+                                            <div class="extras">
+                                                <div class="theme-color">
+                                                    <img src="" alt="" id="theme-icon">
+                                                </div>
+                                                <a href="javascript:void(0)" id="mobile-menu" class="menu-start">
+                                                    <svg id="ham-menu" viewBox="0 0 100 100"> <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" /> <path class="line line2" d="M 20,50 H 80" /> <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" /> </svg>
+                                                </a>
+                                                <a href="tel:+34646937171" class="theme-btn">
+                                                    (+34) 646 937 171
+                                                    <i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="62" viewBox="0 0 40 62">
+                                                            <defs>
+                                                                <clipPath id="saddasdasdasdasda">
+                                                                    <rect width="40" height="62"/>
+                                                                </clipPath>
+                                                            </defs>
+                                                            <g id="Mobisdfle" clip-path="url(#saddasdasdasdasda)">
+                                                                <path id="Path_125" data-name="Path 1" d="M10,6a4,4,0,0,0-4,4V50a4,4,0,0,0,4,4H28a4,4,0,0,0,4-4V10a4,4,0,0,0-4-4H10m0-6H28A10,10,0,0,1,38,10V50A10,10,0,0,1,28,60H10A10,10,0,0,1,0,50V10A10,10,0,0,1,10,0Z" transform="translate(1 1)"/>
+                                                                <path id="Path_4342" data-name="Path 2" d="M2.5,0h7a2.5,2.5,0,0,1,0,5h-7a2.5,2.5,0,0,1,0-5Z" transform="translate(14 48)"/>
+                                                            </g>
+                                                        </svg>
+                                                    </i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                        </div>
-                    </div>
-                    <!-- Topbar Area End -->
-                    <!-- Menu Start -->
-                    <div class="menu-area menu-sticky">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-3">
-                                    <div class="logo-part">
-                                        <a href="{{ route('frontend.home.index') }}">
-                                            <img src="{{ asset('frontend/assets/images/logo-dark.png') }}" alt="Escola Els 30 Passos">
-                                        </a>
-                                    </div>
-                                    <div class="mobile-menu">
-                                        <a href="#" class="rs-menu-toggle rs-menu-toggle-close secondary">
-                                            <i class="fa fa-bars"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 text-right">                                    
-                                    <div class="rs-menu-area">
-                                        <div class="main-menu">
-                                            <nav class="rs-menu pr-100 lg-pr-50 md-pr-0">
-                                                <ul class="nav-menu">
-                                                    <li class="menu-item-has-children">
-                                                        <a href="javascript:void(0);">Escola</a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                <a href="{{ route('frontend.equip.index') }}">L'equip humà</a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="{{ route('frontend.histories.index') }}">Història</a> 
-                                                            </li>
-                                                            <li>
-                                                                <a href="{{ route('frontend.escolaFamilies.index') }}">Escola familia</a> 
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="javascript:void(0);">Serveis educatius</a>
-                                                        <ul class="sub-menu">
-                                                            @foreach ($serveisEducatius as $serveiEducatiu)
-                                                                <li>
-                                                                    <a href="{{ route('frontend.serveisEducatius.index', ['servei' => $serveiEducatiu->slug]) }}">
-                                                                        {{ $serveiEducatiu->titol }}
-                                                                    </a> 
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('frontend.consellEscolar.index') }}">Consell escolar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('frontend.documentsCentre.index') }}">Documents del centre</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="https://afescola30passos.com/" target="_blank">l'AF</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('frontend.contacte.index') }}">Contacte</a>
-                                                    </li>
-                                                    <li class="show-mobile">
-                                                        <a href="https://www.solarcat.cat/escola/login">Accés àrea privada</a>
-                                                    </li>
-                                                </ul> <!-- //.nav-menu -->
-                                            </nav>                                        
-                                        </div> <!-- //.main-menu -->                              
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Menu End --> 
-                </header>
-                <!--Header End-->
+                    <div class="mobile-nav" id="mobile-nav">
+                        {{-- <div class="res-log">
+                            <a href="{{ route('frontend.home.index') }}">
+                                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Solarcat">
+                            </a>
+                        </div> --}}
+                        <ul>
+                            <li>
+                                <a href="{{ route('frontend.empresa.index') }}">EMPRESA</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('frontend.productos.index') }}">PRODUCTOS</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0)">SERVICIOS</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ route('frontend.fotovoltaicaViviendas.index') }}">Fotovoltaica en viviendas</a></li>
+                                    <li><a href="{{ route('frontend.fotovoltaicaEmpresas.index') }}">Fotovoltaica para viviendas</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                              <a href="{{ route('frontend.projectes.index') }}">PROYECTOS</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('frontend.contacte.index') }}">CONTACTO</a>
+                            </li>
+                        </ul>
+                        <a href="JavaScript:void(0)" id="res-cross"></a>
+                    </div>
+                    {{-- <div class="mobile-nav desktop-menu">
+                        <h2>We Build Building and Great Homes.</h2>
+                        <p class="des">We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly master new technologies.</p>
+                        <figure>
+                            <img src="{{ asset('frontend/assets/images/desktop-menu-img.jpg') }}" alt="Desktop Menu Image">
+                        </figure>
+                        <h3>Get in touch</h3>
+                        <p class="num">(+34) 646 937 171</p>
+                        <p class="adrs">C/ Sant Josep Oriol, 44 - 08911, Badalona</p>
+                        <div class="social-medias">
+                            <a href="javascript:void(0)">Facebook</a>
+                            <a href="javascript:void(0)">Twitter</a>
+                            <a href="javascript:void(0)">Linkedin</a>
+                        </div>
+                    </div> --}}
+                </div>
             </div>
+        </header>
 
             @yield('content')
-
-            {!! EuCookieConsent::getPopup() !!}
-     
-        <!-- Footer Start -->
-        <footer id="rs-footer" class="rs-footer">
-            <div class="footer-top">
+            
+        <footer class="footer-style-one">
+            <div class="footer-p-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
-                            <div class="footer-logo mb-30">
-                                <a href="{{ route('frontend.home.index') }}">
-                                    <img src="{{ asset('frontend/assets/images/logo-dark.png') }}" alt="Escola Els 30 Passos">
-                                </a>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-col">
+                                <img src="{{ asset('frontend/assets/images/logo2.png') }}" alt="solarcat"><br><br>
+                                <p>Consigue tu instalación de manera fácil y sin preocupaciones, donde nosotros nos encargamos de todo el proceso.</p>
                             </div>
-                            <div class="textwidget pb-30">
-                                <p>L'Escola té el ferm propòsit de consolidar un projecte educatiu de centre fet i pensat pels i amb els infants.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-col">
+                                <h3>Contacto</h3>
+                                <ul>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="79" height="94" viewBox="0 0 79 94">
+                                            <defs>
+                                                <clipPath id="clip-location_B">
+                                                    <rect width="79" height="94"/>
+                                                </clipPath>
+                                            </defs>
+                                            <g id="location_B" data-name="location B" clip-path="url(#clip-location_B)">
+                                                <path id="Path_121" data-name="Path 1" d="M962.855,575.375a3,3,0,0,1-2.1-.861l-26.263-25.826c-11.03-11.993-13.791-27.653-7.492-42a38.334,38.334,0,0,1,34.959-23.117l1.346.009c15.262,0,27.868,8.452,33.722,22.609,6.152,14.878,3.046,31.554-7.912,42.485-.528.555-24.064,25.75-24.064,25.75a3,3,0,0,1-2.129.951Zm-.9-85.8A31.924,31.924,0,0,0,932.49,509.1c-5.313,12.1-2.954,25.342,6.31,35.419l23.963,23.559c15.027-16.085,20.179-21.585,22.274-23.488l-.164-.165c9.233-9.209,11.825-23.318,6.605-35.944a29.677,29.677,0,0,0-28.177-18.9Z" transform="translate(-922.725 -482.15)"/>
+                                                <path id="Path_23" data-name="Path 2" d="M15,6a9,9,0,1,0,9,9,9.01,9.01,0,0,0-9-9m0-6A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" transform="translate(25 26)"/>
+                                            </g>
+                                        </svg>
+                                        <p>C/ Sant Josep Oriol, 44 - 08911, Badalona</p>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="62" viewBox="0 0 40 62">
+                                            <defs>
+                                                <clipPath id="dasdasdasd">
+                                                    <rect width="40" height="62"/>
+                                                </clipPath>
+                                            </defs>
+                                            <g id="Mobsdfsdfsdfsdfile" clip-path="url(#dasdasdasd)">
+                                                <path id="Path_331" data-name="Path 1" d="M10,6a4,4,0,0,0-4,4V50a4,4,0,0,0,4,4H28a4,4,0,0,0,4-4V10a4,4,0,0,0-4-4H10m0-6H28A10,10,0,0,1,38,10V50A10,10,0,0,1,28,60H10A10,10,0,0,1,0,50V10A10,10,0,0,1,10,0Z" transform="translate(1 1)"/>
+                                                <path id="Path_2" data-name="Path 2" d="M2.5,0h7a2.5,2.5,0,0,1,0,5h-7a2.5,2.5,0,0,1,0-5Z" transform="translate(14 48)"/>
+                                            </g>
+                                        </svg>
+                                        <p>
+                                            <a href="tel:+34646937171" style="color:#b7b7b7"> (+34) 646 937 171 </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102" height="93" viewBox="0 0 102 93">
+                                            <defs>
+                                                <clipPath id="clip-Email_B">
+                                                    <rect width="102" height="93"/>
+                                                </clipPath>
+                                            </defs>
+                                            <g id="Email_B" data-name="Email B" clip-path="url(#clip-Email_B)">
+                                                <path id="Path_1444" data-name="Path 1" d="M969.85,550.4,927.766,528.2l2.8-5.307,39.229,20.7,37.712-20.677,2.885,5.261Z" transform="translate(-918 -492)"/>
+                                                <path id="Path_24" data-name="Path 2" d="M969.562,494.385l48.391,25.361,0,1.818c-.023,17.272-.043,42.814-.012,47.124l.012.024v.709c0,5.426-1.516,9.425-4.508,11.885a10.4,10.4,0,0,1-6.575,2.344l-75.5-.016c-3.557.071-5.965-.931-7.717-2.752-2.4-2.5-3.517-6.391-3.317-11.577l.065-1.194c.116-5.315.029-29.954-.067-46.535l-.011-1.842Zm42.386,28.988-42.411-22.227-43.2,22.238c.189,32.939.239,42.8-.143,46.148l.13.005c-.168,4.351.8,6.309,1.645,7.185a3.342,3.342,0,0,0,2.458.984l76.043-.071a4.65,4.65,0,0,0,3.16-.963c1.517-1.248,2.319-3.754,2.319-7.25h.09C1011.893,566.689,1011.9,557.566,1011.947,523.373Z" transform="translate(-918 -492)"/>
+                                            </g>
+                                        </svg>
+                                        <p><a href="mailto:info@solarcat.es" style="color:#b7b7b7">info@solarcat.es</a></p>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="footer-social md-mb-30">  
-                                <li> 
-                                    <a href="https://t.me/+DIPiEYdBxuQ3MzNk" target="_blank"><span><i class="fa fa-telegram"></i></span></a> 
-                                </li>                                       
-                            </ul>
                         </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 pl-45 md-pl-15 md-mb-30">
-                            <h3 class="widget-title">Menú</h3>
-                            <ul class="site-map">
-                                <li><a href="{{ route('frontend.equip.index') }}">Escola</a></li>
-                                <li><a href="{{ route('frontend.menus.index') }}">Serveis educatius</a></li>
-                                <li><a href="{{ route('frontend.consellEscolar.index') }}">Consell escolar</a></li>
-                                <li><a href="{{ route('frontend.documentsCentre.index') }}">Documents del centre</a></li>
-                                <li><a href="https://afescola30passos.com/" target="_blank">l'AF</a></li>
-                                <li><a href="{{ route('frontend.contacte.index') }}">Contacte</a></li>
-                                <li><a href="https://www.solarcat.cat/escola/login">Accés àrea privada</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12 md-mb-30">
-                            <h3 class="widget-title">Contacte</h3>
-                            <ul class="address-widget">
-                                <li>
-                                    <i class="flaticon-location"></i>
-                                    <div class="desc">C/ de Berenguer de Palou, 64, Sant Andreu, 08027 Barcelona</div>
-                                </li>
-                                <li>
-                                    <i class="flaticon-call"></i>
-                                    <div class="desc">
-                                        <a href="tel:+34937826644">937 82 66 44</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="flaticon-email"></i>
-                                    <div class="desc">
-                                        <a href="mailto:a8074641@xtec.cat">a8074641@xtec.cat</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="flaticon-clock-1"></i>
-                                    <div class="desc">
-                                        Horaris: 09:00 - 16:30  
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-telegram"></i>
-                                    <div class="desc">
-                                        <a href="https://t.me/+DIPiEYdBxuQ3MzNk" target="_blank">
-                                            Telegram
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-12 col-sm-12">
-                            {{-- <h3 class="widget-title">Newsletter</h3>
-                            <p class="widget-desc">We denounce with righteous and in and dislike men who are so beguiled and demo realized.</p>
-                            <p>
-                                <input type="email" name="EMAIL" placeholder="Your email address" required="">
-                                <em class="paper-plane"><input type="submit" value="Sign up"></em>
-                                <i class="flaticon-send"></i>
-                            </p> --}}
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-col">
+                                <h3>Información</h3>
+                                <p>Aviso legal</p>
+                                <p>Política de privacidad</p>
+                                <p>Política de cookies</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">                    
-                    <div class="row y-middle">
-                        <div class="col-lg-6 text-right md-mb-10 order-last">
-                            <ul class="copy-right-menu">
-                                <li><a href="#">Avís legal</a></li>
-                                <li><a href="#">Política de privacitat</a></li>
-                                <li><a href="{{ route('frontend.legal.politica-cookies.index') }}">Política de cookies</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="copyright">
-                                <p>Disseny web <a href="https://www.webmastervic.com/" target="_blank">Webmastervic</a></p>
+            <div class="footer-p-3 rights">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <p>Diseño web por: <a href="https://webmastervic.com" target="_blank">Webmastervic</a></p>
+                            <div class="social-medias">
+                                <a href="javascript:void(0)">Facebook</a>
+                                <a href="javascript:void(0)">Instagram</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <!-- Footer End -->
-
-        <!-- start scrollUp  -->
-        <div id="scrollUp" class="orange-color">
-            <i class="fa fa-angle-up"></i>
-        </div>
-        <!-- End scrollUp  -->
-
-        <!-- modernizr js -->
-        <script src="{{ asset('frontend/assets/js/modernizr-2.8.3.min.js') }}"></script>
-        <!-- jquery latest version -->
+        <!-- Footer Style One End -->
+        <button id="scrollTop" class="scrollTopStick">
+        <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <!-- Jquery -->
         <script src="{{ asset('frontend/assets/js/jquery.min.js') }}"></script>
-        <!-- Bootstrap v4.4.1 js -->
+        <!-- Waypoint -->
+        <script src="{{ asset('frontend/assets/js/jquery.waypoints.min.js') }}"></script>
+        <!-- Counter -->
+        <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js') }}"></script>
+        <!-- Bootstrap Js -->
         <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
-        <!-- Menu js -->
-        <script src="{{ asset('frontend/assets/js/rsmenu-main.js') }}"></script> 
-        <!-- op nav js -->
-        <script src="{{ asset('frontend/assets/js/jquery.nav.js') }}"></script>
-        <!-- owl.carousel js -->
+        <!-- Fancybox Js -->
+        <script src="{{ asset('frontend/assets/js/jquery.fancybox.min.js') }}"></script>
+        <!-- Nice Select Js -->
+        <script src="{{ asset('frontend/assets/js/jquery.nice-select.js') }}"></script>
+        <!-- Animate on scroll Js -->
+        <script src="{{ asset('frontend/assets/js/aos.js') }}"></script>
+        <!-- Owl Carousal Js -->
         <script src="{{ asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
-        <!-- wow js -->
-        <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
-        <!-- Skill bar js -->
-        <script src="{{ asset('frontend/assets/js/skill.bars.jquery.js') }}"></script>
-        <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js') }}"></script> 
-         <!-- counter top js -->
-        <script src="{{ asset('frontend/assets/js/waypoints.min.js') }}"></script>
-        <!-- swiper js -->
-        <script src="{{ asset('frontend/assets/js/swiper.min.js') }}"></script>   
-        <!-- particles js -->
-        <script src="{{ asset('frontend/assets/js/particles.min.js') }}"></script>  
-        <!-- magnific popup js -->
-        <script src="{{ asset('frontend/assets/js/jquery.magnific-popup.min.js') }}"></script>      
-        <!-- plugins js -->
-        <script src="{{ asset('frontend/assets/js/plugins.js') }}"></script>
-        <!-- pointer js -->
-        <script src="{{ asset('frontend/assets/js/pointer.js') }}"></script>
-        <!-- contact form js -->
-        <script src="{{ asset('frontend/assets/js/contact.form.js') }}"></script>
-        <!-- main js -->
-        <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
-
-        <script>
-            $(document).ready(function() {
-                $(this).removeClass('rs-menu-toggle-open').addClass('rs-menu-toggle-close');
-                $('.rs-menu').animate({height:'0px'},{queue:false, duration:300}).addClass('rs-menu-close');
-            });
-        </script>
+        <!-- Custom Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+        <!-- Custom Js -->
+        <script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
 
         @yield('scripts')
 
